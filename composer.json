@@ -9,6 +9,12 @@
             "homepage": "https://github.com/mtdowling"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/ezimuel/streams"
+        }
+    ],
     "require": {
         "php": ">=5.4.0",
         "guzzlehttp/streams": "~3.0",
