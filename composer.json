@@ -15,7 +15,6 @@
             "url": "https://github.com/ezimuel/streams"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "php": ">=5.4.0",
         "guzzlehttp/streams": "dev-fork-elasticsearch",
