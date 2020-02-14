@@ -2,6 +2,8 @@
 RingPHP
 =======
 
+**Note:** this is a fork of the original project since it was abandoned.
+
 Provides a simple API and specification that abstracts away the details of HTTP
 into a single PHP function. RingPHP be used to power HTTP clients and servers
 through a PHP function that accepts a request hash and returns a response hash
