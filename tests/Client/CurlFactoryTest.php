@@ -64,7 +64,12 @@ class CurlFactoryTest extends TestCase
         $result = $f($request);
         $this->assertIsArray($result);
         $this->assertCount(3, $result);
-        $this->assertInstanceOf(CurlHandle::class, $result[0]);
+        if (version_compare(PHP_VERSION, '8.0.0') >= 0) {
+            $this->assertInstanceOf(CurlHandle::class, $result[0]);
+        } else {
+            $this->assertIsResource($result[0]);
+        }
+
         $this->assertIsArray($result[1]);
         $this->assertSame($stream, $result[2]);
         curl_close($result[0]);
@@ -326,8 +331,9 @@ class CurlFactoryTest extends TestCase
         ]);
         $response->wait();
         $this->assertNotEmpty($called);
+        $num =  version_compare(PHP_VERSION, '8.0.0') >= 0 ? 5 : 4;
         foreach ($called as $call) {
-            $this->assertCount(5, $call);
+            $this->assertCount($num, $call);
         }
     }
 
