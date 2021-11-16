@@ -2,3 +2,4 @@ vendor
 build/artifacts/
 composer.lock
 docs/_build/
+.phpunit.result.cache

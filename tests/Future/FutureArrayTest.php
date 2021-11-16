@@ -2,9 +2,10 @@
 namespace GuzzleHttp\Tests\Ring\Future;
 
 use GuzzleHttp\Ring\Future\FutureArray;
+use PHPUnit\Framework\TestCase;
 use React\Promise\Deferred;
 
-class FutureArrayTest extends \PHPUnit_Framework_TestCase
+class FutureArrayTest extends TestCase
 {
     public function testLazilyCallsDeref()
     {
@@ -18,7 +19,6 @@ class FutureArrayTest extends \PHPUnit_Framework_TestCase
             }
         );
         $this->assertFalse($c);
-        $this->assertFalse($this->readAttribute($f, 'isRealized'));
         $this->assertEquals(200, $f['status']);
         $this->assertTrue($c);
     }
@@ -44,11 +44,10 @@ class FutureArrayTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(['status' => 200], iterator_to_array($f));
     }
 
-    /**
-     * @expectedException \RuntimeException
-     */
     public function testThrowsWhenAccessingInvalidProperty()
     {
+        $this->expectException(\RuntimeException::class);
+
         $deferred = new Deferred();
         $f = new FutureArray($deferred->promise(), function () {});
         $f->foo;

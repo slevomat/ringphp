@@ -3,8 +3,9 @@ namespace GuzzleHttp\Tests\Ring\Client;
 
 use GuzzleHttp\Ring\Client\Middleware;
 use GuzzleHttp\Ring\Future\CompletedFutureArray;
+use PHPUnit\Framework\TestCase;
 
-class MiddlewareTest extends \PHPUnit_Framework_TestCase
+class MiddlewareTest extends TestCase
 {
     public function testFutureCallsDefaultHandler()
     {

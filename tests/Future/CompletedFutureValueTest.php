@@ -3,8 +3,9 @@ namespace GuzzleHttp\Tests\Ring\Future;
 
 use GuzzleHttp\Ring\Exception\CancelledFutureAccessException;
 use GuzzleHttp\Ring\Future\CompletedFutureValue;
+use PHPUnit\Framework\TestCase;
 
-class CompletedFutureValueTest extends \PHPUnit_Framework_TestCase
+class CompletedFutureValueTest extends TestCase
 {
     public function testReturnsValue()
     {

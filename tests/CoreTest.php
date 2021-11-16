@@ -5,9 +5,10 @@ use GuzzleHttp\Ring\Core;
 use GuzzleHttp\Ring\Future\CompletedFutureArray;
 use GuzzleHttp\Ring\Future\FutureArray;
 use GuzzleHttp\Stream\Stream;
+use PHPUnit\Framework\TestCase;
 use React\Promise\Deferred;
 
-class CoreTest extends \PHPUnit_Framework_TestCase
+class CoreTest extends TestCase
 {
     public function testReturnsNullNoHeadersAreSet()
     {
@@ -122,12 +123,11 @@ class CoreTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('http://foo.com/', Core::url($req));
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage No Host header was provided
-     */
     public function testEnsuresHostIsAvailableWhenCreatingUrls()
     {
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage('No Host header was provided');
+
         Core::url([]);
     }
 
@@ -187,11 +187,10 @@ class CoreTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('foo', Core::body(['body' => new StrClass]));
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testEnsuresBodyIsValid()
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         Core::body(['body' => false]);
     }
 
