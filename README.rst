@@ -2,6 +2,8 @@
 RingPHP
 =======
 
+[![Build status](https://github.com/ezimuel/ringphp/workflows/PHP%20test/badge.svg)](https://github.com/ezimuel/ringphp/actions) [![Latest Stable Version](https://poser.pugx.org/ezimuel/ringphp/v/stable)](https://packagist.org/packages/ezimuel/ringphp)
+
 **Note:** this is a fork of the original project since it was abandoned.
 
 Provides a simple API and specification that abstracts away the details of HTTP
