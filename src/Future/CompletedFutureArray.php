@@ -12,42 +12,54 @@ class CompletedFutureArray extends CompletedFutureValue implements FutureArrayIn
     }
 
     #[\ReturnTypeWillChange]
-    /** @return bool */
+    /**
+     * @return bool 
+     */
     public function offsetExists($offset)
     {
         return isset($this->result[$offset]);
     }
 
     #[\ReturnTypeWillChange]
-    /** @return mixed */
+    /**
+     * @return mixed 
+     */
     public function offsetGet($offset)
     {
         return $this->result[$offset];
     }
 
     #[\ReturnTypeWillChange]
-    /** @return void */
+    /**
+     * @return void 
+     */
     public function offsetSet($offset, $value)
     {
         $this->result[$offset] = $value;
     }
 
     #[\ReturnTypeWillChange]
-    /** @return void */
+    /**
+     * @return void 
+     */
     public function offsetUnset($offset)
     {
         unset($this->result[$offset]);
     }
 
     #[\ReturnTypeWillChange]
-    /** @return int */
+    /**
+     * @return int 
+     */
     public function count()
     {
         return count($this->result);
     }
 
     #[\ReturnTypeWillChange]
-    /** @return \ArrayIterator */
+    /**
+     * @return \ArrayIterator 
+     */
     public function getIterator()
     {
         return new \ArrayIterator($this->result);
