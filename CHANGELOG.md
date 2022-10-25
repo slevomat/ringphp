@@ -6,6 +6,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.2.1] - 2022-10-25
+
+- Fixed the support of PHP 8.1 with [#7](https://github.com/ezimuel/ringphp/pull/7) and [#8](https://github.com/ezimuel/ringphp/pull/8)
+- Fixed the integration with Symfony, adding explicit @return annotations to suppress User Deprecated notices [#5](https://github.com/ezimuel/ringphp/pull/5)
+
 ## [1.2.0] - 2021-11-16
 
 ### Added
